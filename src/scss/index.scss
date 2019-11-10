@@ -1,0 +1,73 @@
+//basic reset
+*{margin: 0; padding: 0; border: 0;}
+//reset focus
+textarea, select, input, button { outline: none; }
+//Do not forget to handle vendor prefixes!!!
+//start
+ 
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url(./drum-set.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: 100vw;
+  }
+
+  #drum-machine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    
+        #pad-container {
+            display: grid; // | block;
+            float:left;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        
+
+                .drum-pad{
+                    width: 150px; //trenutno su fiksni, nisu responsive;
+                    height: 150px;
+                    border-top: 7px solid chartreuse;
+                    border-bottom-left-radius: 25px; 
+                }
+        }
+        #pad-container :nth-child(n+4){
+          color: chartreuse;
+          background-color: rgb(17, 13, 77);
+         }
+        #display{
+            margin: 20px;
+            margin-top: 80px;
+            float:left;
+            width: inherit;
+            text-align: center;
+            color:  rgb(17, 13, 77);
+            font-size: 1.4em;
+            text-transform: uppercase;
+            background-color:  chartreuse;
+            
+        }
+        #display:after{
+          clear: both;
+        }
+  }
+  #drum-machine:after{
+    clear: both;
+  }
+  footer{
+    margin: 20px auto 80px auto;
+    width:30%;
+    text-align: center;
+    background-color: rgba($color: #FFFFFF, $alpha: 0.8)
+  }
+
+
+  
